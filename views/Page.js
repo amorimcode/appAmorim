@@ -3,8 +3,10 @@ import { View, Text } from 'react-native';
 import {css} from '../assets/css/css'
 export default function Page(props) {
     return (
-        <View>
-            <Text>O nome da empresa é {props.empresa} e seu funcionário é {props.name} </Text>
+        <View style={css.textPage}> 
+            <Text>O nome da empresa é {props.empresa} e seu funcionário é {props.name}. 
+            Comprou o produto {props.produto} na seguinte quantidade: {props.quantidade}
+             </Text>
         </View>
     )
 }
