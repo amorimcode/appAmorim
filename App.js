@@ -1,36 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, useContext } from 'react';
 import { Text, View, Button, Alert } from 'react-native';
-import { css } from './assets/css/css'
-import Page from './views/Page'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './views/Home';
+import Login from './views/Login';
 
 
 export default function App() {
-  const [product, setProduct] = useState('Bola')
-  const [quantity, setQuantity] = useState(0)
 
-  useEffect(() => {
-    if (quantity > 0) {
-      Alert.alert('Alerta', 'Novo produto foi adicionado')
-    }
-  }, [quantity])
-
-
-  const props = {
-    empresa: 'Amorim.co',
-    name: 'Bruno Amorim',
-    produto: product,
-    quantidade: quantity,
-  }
+  const Stack = createStackNavigator();
 
 
   return (
-    <View style={css.container}>
-      <Text>{product}</Text>
-      <Page {...props}></Page>
-      <Button title='Adicionar produtos' onPress={() => setQuantity(quantity + 1)}  ></Button>
-
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+
