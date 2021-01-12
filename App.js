@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, useContext } from 'react';
-import { Text, View, Button, Alert } from 'react-native';
+import { Text, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './views/Home';
-import Login from './views/Login';
+import { Home, Login, Rastreio } from './views'
 
 
 export default function App() {
@@ -15,8 +14,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Bem-Vindo",
+            headerStyle: {backgroundColor: '#72a7fc'},
+            headerTintColor: '#333',
+            headerTitleStyle: { fontWeight: 'bold', alignSelf: 'center' }
+          }} />
+
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Rastreio" component={Rastreio} />
+        {/* <Stack.Screen name="Login" component={AreaRestrita} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
