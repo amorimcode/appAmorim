@@ -3,26 +3,21 @@ import { StyleSheet } from 'react-native';
 const css = StyleSheet.create({
   container: {
     flex: 1,
-    textDecorationColor: 'white',
-    alignItems: 'center',
     justifyContent: 'center',
-  },
-  container2: {
-    flex: 1,
-    flexDirection: 'row',
-    textDecorationColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textPage: {
-    backgroundColor: 'orange',
-    padding: 20,
+    marginHorizontal: 16,
   },
   button_home: {
-    height: 10,
-    width: 10,
-    marginRight: 20
-  }
+    width: 30,
+    height: 30
+  },
+  title: {
+    textAlign: 'center',
+    marginVertical: 8,
+  },
+  fixToText: {
+    margin: 30,
+    padding: 30
+  },
 });
 
 export { css };
