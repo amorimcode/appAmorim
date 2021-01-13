@@ -19,12 +19,12 @@ export default function App() {
           component={Home}
           options={{
             title: "Bem-Vindo",
-            headerStyle: {backgroundColor: '#72a7fc'},
+            headerStyle: { backgroundColor: '#72a7fc' },
             headerTintColor: '#333',
             headerTitleStyle: { fontWeight: 'bold', alignSelf: 'center' }
           }} />
 
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
         <Stack.Screen name="Rastreio" component={Rastreio} />
         {/* <Stack.Screen name="Login" component={AreaRestrita} /> */}
       </Stack.Navigator>
