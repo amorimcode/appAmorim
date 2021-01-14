@@ -26,8 +26,5 @@ export default function Home({ navigation }) {
                 </View>
             </View>
         </SafeAreaView>
-
-
-
     )
 }
